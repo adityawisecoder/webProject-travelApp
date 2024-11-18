@@ -1,0 +1,155 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+.nav {
+    background-color: #444;
+    overflow: hidden;
+    text-align: center;
+}
+
+.nav a {
+    display: inline-block;
+    color: white;
+    padding: 1rem;
+    text-decoration: none;
+}
+
+.nav a:hover {
+    background-color: #555;
+}
+
+.container {
+    display: flex;
+    flex: 1;
+}
+
+.sidebar {
+    background-color: #f4f4f4;  /* Fixed sidebar color */
+    padding: 1rem;
+    width: 20%;
+    box-sizing: border-box;
+}
+
+.main-content {
+    background-color: #fff;
+    padding: 2rem;
+    width: 80%;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease;
+}
+
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Form styling */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1rem;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea,
+form select {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+form input[type="radio"] {
+    margin-right: 0.5rem;
+}
+
+form textarea {
+    resize: vertical;
+}
+
+form button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+#genderMale,
+#genderFemale {
+    margin-bottom: 1rem;
+}
+
+#errorMessage {
+    margin-top: 0.5rem;
+}
+.display-info {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.display-info h3 {
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.display-info table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.display-info th,
+.display-info td {
+    text-align: left;
+    padding: 0.5rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.display-info th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+.display-info td {
+    background-color: #ffffff;
+}

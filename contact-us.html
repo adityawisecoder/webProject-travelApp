@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Travel Deals</title>
+    <link rel="stylesheet" href="mystyle.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Contact Us</h1>
+        <p id="date-time"></p> <!-- Date and time element -->
+    </div>
+    <div class="nav">
+        <a href="index.html">Home</a>
+        <a href="stays.html">Stays</a>
+        <a href="flights.html">Flights</a>
+        <a href="cars.html">Cars</a>
+        <a href="cruises.html">Cruises</a>
+        <a href="contact-us.html">Contact Us</a>
+        <a href="cart.html">Cart</a>
+
+    </div>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Contact Us</h2>
+            <p>Please fill out the form below:</p>
+        </div>
+        <div class="main-content">
+            <form id="contactForm">
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" required><br>
+
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required><br>
+
+                <label for="phoneNumber">Phone Number:</label>
+                <input type="text" id="phoneNumber" name="phoneNumber" placeholder="(123) 456-7890" required><br>
+
+                <label>Gender:</label>
+                <input type="radio" id="genderMale" name="gender" value="Male"> Male
+                <input type="radio" id="genderFemale" name="gender" value="Female"> Female<br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br>
+
+                <label for="comment">Comment:</label>
+                <textarea id="comment" name="comment" rows="4" required></textarea><br>
+
+                <button type="submit">Submit</button>
+                <p id="errorMessage" style="color: red;"></p>
+            </form>
+        </div>
+    </div>
+    <div class="footer">
+        <p>&copy; 2024 Travel Deals. All rights reserved.</p>
+        <p>Team Information: Arvind Jei - AXD220199, Aditya Krishna - AXK230001, Anusha Gupta - AXG230026 CS 6314.002</p>
+
+        <label for="font-size">Font Size:</label>
+        <select id="font-size">
+            <option value="14px">Small</option>
+            <option value="16px" selected>Medium</option>
+            <option value="18px">Large</option>
+            <option value="20px">Extra Large</option>
+        </select>
+    
+        <label for="bg-color">Background Color:</label>
+        <select id="bg-color">
+            <option value="#ffffff">White</option>
+            <option value="#f4f4f4">Light Grey</option>
+            <option value="#e0e0e0">Darker Grey</option>
+            <option value="#d3ffd3">Light Green</option>
+            <option value="#d3e4ff">Light Blue</option>
+        </select>
+    </div>
+    <script src="script.js" defer></script>
+
+</body>
+</html>

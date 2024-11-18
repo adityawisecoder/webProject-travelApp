@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Deals - Cart</title>
+    <link rel="stylesheet" href="mystyle.css">
+    <script src="cart_script.js" defer></script>
+</head>
+<body>
+    <div class="header">
+        <h1>Cart</h1>
+    </div>
+    <div class="nav">
+        <a href="index.html">Home</a>
+        <a href="stays.html">Stays</a>
+        <a href="flights.html">Flights</a>
+        <a href="cars.html">Cars</a>
+        <a href="cruises.html">Cruises</a>
+        <a href="contact-us.html">Contact Us</a>
+    </div>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Your Cart</h2>
+            <p>Review and confirm your booking details.</p>
+        </div>
+        <div class="main-content">
+            <h2>Selected Flight</h2>
+            <div id="cartDetails">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Flight ID</th>
+                            <th>Origin</th>
+                            <th>Destination</th>
+                            <th>Departure</th>
+                            <th>Arrival</th>
+                            <th>Total Seats</th>
+                            <th>Total Price</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cartFlightDetails"></tbody>
+                </table>
+            </div>
+
+            <h3>Price Breakdown</h3>
+            <div id="priceBreakdown">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Passenger Type</th>
+                            <th>Number</th>
+                            <th>Price Per Ticket</th>
+                            <th>Subtotal</th>
+                        </tr>
+                    </thead>
+                    <tbody id="priceBreakdownTable"></tbody>
+                </table>
+            </div>
+
+            <h3>Passenger Information</h3>
+            <div id="passengerDetails">
+                <form id="passengerForm">
+                    <div id="passengerInputs">
+                        <!-- Dynamically generated passenger inputs go here -->
+                    </div>
+                    <button type="submit">Confirm Booking</button>
+                </form>
+            </div>
+
+            <div id="bookingConfirmation" style="display: none;">
+                <h3>Booking Confirmation</h3>
+                <p id="confirmationDetails"></p>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p>&copy; 2024 Travel Deals. All rights reserved.</p>
+    </div>
+</body>
+</html>

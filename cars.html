@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Deals - Car Rental</title>
+    <link rel="stylesheet" href="mystyle.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="header">
+        <h1>Car Rental</h1>
+        <p id="date-time"></p>
+    </div>
+    <div class="nav">
+        <a href="index.html">Home</a>
+        <a href="stays.html">Stays</a>
+        <a href="flights.html">Flights</a>
+        <a href="cars.html">Cars</a>
+        <a href="cruises.html">Cruises</a>
+        <a href="contact-us.html">Contact Us</a>
+        <a href="cart.html">Cart</a>
+    </div>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Categories</h2>
+            <ul>
+                <li><a href="stays.html">Stays</a></li>
+                <li><a href="flights.html">Flights</a></li>
+                <li><a href="cars.html">Cars</a></li>
+                <li><a href="cruises.html">Cruises</a></li>
+            </ul>
+        </div>
+        <div class="main-content">
+            <h2>Find the Perfect Car for Your Trip</h2>
+            <form id="carForm">
+                <label for="city">City:</label>
+                <input type="text" id="city" required><br>
+
+                <label for="carType">Car Type:</label>
+                <select id="carType" required>
+                    <option value="">Select Car Type</option>
+                    <option value="Economy">Economy</option>
+                    <option value="SUV">SUV</option>
+                    <option value="Compact">Compact</option>
+                    <option value="Midsize">Midsize</option>
+                </select><br>
+
+                <label for="checkInDate">Check-in Date:</label>
+                <input type="date" id="checkInDate" required><br>
+
+                <label for="checkOutDate">Check-out Date:</label>
+                <input type="date" id="checkOutDate" required><br>
+
+                <button type="button" onclick="validateCarRental()">Search</button>
+            </form>
+
+            <div id="output" class="display-info" style="margin-top: 1rem;"></div>
+        </div>
+    </div>
+    <div class="footer">
+        <p>&copy; 2024 Travel Deals. All rights reserved.</p>
+        <p>Team Information: Arvind Jei - AXD220199, Aditya Krishna - AXK230001, Anusha Gupta - AXG230026 CS 6314.002</p>
+
+        <label for="font-size">Font Size:</label>
+        <select id="font-size">
+            <option value="14px">Small</option>
+            <option value="16px" selected>Medium</option>
+            <option value="18px">Large</option>
+            <option value="20px">Extra Large</option>
+        </select>
+
+        <label for="bg-color">Theme:</label>
+        <select id="bg-color">
+            <option value="#ffffff">Default Theme</option>
+            <option value="#d3e4ff">Blue Theme</option>
+            <option value="#d3ffd3">Green Theme</option>
+            <option value="#f4f4f4">Light Grey Theme</option>
+            <option value="#e0e0e0">Dark Grey Theme</option>
+        </select>
+    </div>
+
+    <script>
+        function validateCarRental() {
+            const city = document.getElementById("city").value.trim();
+            const carType = document.getElementById("carType").value;
+            const checkInDate = new Date(document.getElementById("checkInDate").value);
+            const checkOutDate = new Date(document.getElementById("checkOutDate").value);
+
+            const validCities = [
+                "Houston", "San Antonio", "Dallas", "Austin", "Fort Worth", "El Paso",
+                "Los Angeles", "San Diego", "San Jose", "San Francisco", "Fresno",
+                "Sacramento", "Long Beach", "Oakland", "Bakersfield", "Anaheim"
+            ];
+            const validCarTypes = ["Economy", "SUV", "Compact", "Midsize"];
+            const minDate = new Date("2024-09-01");
+            const maxDate = new Date("2024-12-01");
+
+            let isValid = true;
+            let errorMessage = "";
+
+            // City validation
+            if (!validCities.includes(city)) {
+                isValid = false;
+                errorMessage += "City must be in Texas or California.\n";
+            }
+
+            // Car type validation
+            if (!validCarTypes.includes(carType)) {
+                isValid = false;
+                errorMessage += "Please select a valid car type (Economy, SUV, Compact, Midsize).\n";
+            }
+
+            // Date validation
+            if (
+                checkInDate < minDate || 
+                checkInDate > maxDate || 
+                checkOutDate < minDate || 
+                checkOutDate > maxDate || 
+                checkInDate >= checkOutDate
+            ) {
+                isValid = false;
+                errorMessage += "Check-in and check-out dates must be between Sep 1, 2024, and Dec 1, 2024, and check-out must be after check-in.\n";
+            }
+
+            // Display results or errors using DOM methods
+            const outputDiv = document.getElementById("output");
+            outputDiv.innerHTML = ""; // Clear previous output
+
+            if (isValid) {
+                const totalDays = (checkOutDate - checkInDate) / (1000 * 60 * 60 * 24);
+
+                // Create elements using DOM methods
+                const resultTitle = document.createElement("h3");
+                resultTitle.textContent = "Rental Details";
+
+                const detailsTable = document.createElement("table");
+
+                const details = [
+                    ["City", city],
+                    ["Car Type", carType],
+                    ["Check-in Date", checkInDate.toLocaleDateString()],
+                    ["Check-out Date", checkOutDate.toLocaleDateString()],
+                    ["Total Duration (Days)", totalDays]
+                ];
+
+                details.forEach(([label, value]) => {
+                    const row = document.createElement("tr");
+                    const th = document.createElement("th");
+                    th.textContent = label;
+                    const td = document.createElement("td");
+                    td.textContent = value;
+                    row.appendChild(th);
+                    row.appendChild(td);
+                    detailsTable.appendChild(row);
+                });
+
+                outputDiv.appendChild(resultTitle);
+                outputDiv.appendChild(detailsTable);
+            } else {
+                const errorParagraph = document.createElement("p");
+                errorParagraph.textContent = errorMessage;
+                errorParagraph.style.color = "red";
+                outputDiv.appendChild(errorParagraph);
+            }
+        }
+    </script>
+</body>
+</html>

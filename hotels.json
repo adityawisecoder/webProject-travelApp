@@ -1,0 +1,142 @@
+[
+    {
+        "hotel-id": "H001",
+        "hotel-name": "Grand Texas Inn",
+        "city": "Houston",
+        "available-rooms": 15,
+        "price-per-night": 150
+    },
+    {
+        "hotel-id": "H002",
+        "hotel-name": "California Comfort Suites",
+        "city": "Los Angeles",
+        "available-rooms": 20,
+        "price-per-night": 180
+    },
+    {
+        "hotel-id": "H003",
+        "hotel-name": "San Antonio Stay",
+        "city": "San Antonio",
+        "available-rooms": 10,
+        "price-per-night": 120
+    },
+    {
+        "hotel-id": "H004",
+        "hotel-name": "Dallas Delight",
+        "city": "Dallas",
+        "available-rooms": 0,
+        "price-per-night": 140
+    },
+    {
+        "hotel-id": "H005",
+        "hotel-name": "Austin Aura Hotel",
+        "city": "Austin",
+        "available-rooms": 11,
+        "price-per-night": 160
+    },
+    {
+        "hotel-id": "H006",
+        "hotel-name": "El Paso Elegance",
+        "city": "El Paso",
+        "available-rooms": 7,
+        "price-per-night": 110
+    },
+    {
+        "hotel-id": "H007",
+        "hotel-name": "Fort Worth Inn",
+        "city": "Fort Worth",
+        "available-rooms": 5,
+        "price-per-night": 130
+    },
+    {
+        "hotel-id": "H008",
+        "hotel-name": "San Diego Seaside",
+        "city": "San Diego",
+        "available-rooms": 18,
+        "price-per-night": 200
+    },
+    {
+        "hotel-id": "H009",
+        "hotel-name": "Bay Area Bliss",
+        "city": "San Francisco",
+        "available-rooms": 10,
+        "price-per-night": 220
+    },
+    {
+        "hotel-id": "H010",
+        "hotel-name": "Fresno Fiesta Hotel",
+        "city": "Fresno",
+        "available-rooms": 9,
+        "price-per-night": 100
+    },
+    {
+        "hotel-id": "H011",
+        "hotel-name": "Sacramento Stay",
+        "city": "Sacramento",
+        "available-rooms": 15,
+        "price-per-night": 170
+    },
+    {
+        "hotel-id": "H012",
+        "hotel-name": "Long Beach Luxury",
+        "city": "Long Beach",
+        "available-rooms": 12,
+        "price-per-night": 190
+    },
+    {
+        "hotel-id": "H013",
+        "hotel-name": "Anaheim Comfort",
+        "city": "Anaheim",
+        "available-rooms": 14,
+        "price-per-night": 210
+    },
+    {
+        "hotel-id": "H014",
+        "hotel-name": "Riverside Retreat",
+        "city": "Riverside",
+        "available-rooms": 11,
+        "price-per-night": 130
+    },
+    {
+        "hotel-id": "H015",
+        "hotel-name": "Stockton Serenity",
+        "city": "Stockton",
+        "available-rooms": 6,
+        "price-per-night": 140
+    },
+    {
+        "hotel-id": "H016",
+        "hotel-name": "Bakersfield Bliss",
+        "city": "Bakersfield",
+        "available-rooms": 8,
+        "price-per-night": 120
+    },
+    {
+        "hotel-id": "H017",
+        "hotel-name": "Irvine Inn & Suites",
+        "city": "Irvine",
+        "available-rooms": 10,
+        "price-per-night": 200
+    },
+    {
+        "hotel-id": "H018",
+        "hotel-name": "Santa Ana Stay",
+        "city": "Santa Ana",
+        "available-rooms": 7,
+        "price-per-night": 150
+    },
+    {
+        "hotel-id": "H019",
+        "hotel-name": "Modesto Marvel",
+        "city": "Modesto",
+        "available-rooms": 5,
+        "price-per-night": 110
+    },
+    {
+        "hotel-id": "H020",
+        "hotel-name": "Oxnard Oasis",
+        "city": "Oxnard",
+        "available-rooms": 9,
+        "price-per-night": 160
+    }
+]

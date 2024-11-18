@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Deals - Cruises</title>
+    <link rel="stylesheet" href="mystyle.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="header">
+        <h1>Book Your Cruise</h1>
+        <p id="date-time"></p>
+    </div>
+    <div class="nav">
+        <a href="index.html">Home</a>
+        <a href="stays.html">Stays</a>
+        <a href="flights.html">Flights</a>
+        <a href="cars.html">Cars</a>
+        <a href="cruises.html">Cruises</a>
+        <a href="contact-us.html">Contact Us</a>
+        <a href="cart.html">Cart</a>
+
+    </div>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Categories</h2>
+            <ul>
+                <li><a href="stays.html">Stays</a></li>
+                <li><a href="flights.html">Flights</a></li>
+                <li><a href="cars.html">Cars</a></li>
+                <li><a href="cruises.html">Cruises</a></li>
+            </ul>
+        </div>
+        <div class="main-content">
+            <h2>Plan Your Cruise Trip</h2>
+            <form id="cruiseForm">
+                <label for="destination">Destination:</label>
+                <select id="destination" required>
+                    <option value="">Select Destination</option>
+                    <option value="Alaska">Alaska</option>
+                    <option value="Bahamas">Bahamas</option>
+                    <option value="Europe">Europe</option>
+                    <option value="Mexico">Mexico</option>
+                </select><br>
+
+                <label for="departureDate">Departure Date:</label>
+                <input type="date" id="departureDate" required><br>
+
+                <label for="minDuration">Minimum Duration (days):</label>
+                <input type="number" id="minDuration" min="3" required><br>
+
+                <label for="maxDuration">Maximum Duration (days):</label>
+                <input type="number" id="maxDuration" max="10" required><br>
+
+                <label for="adults">Adults:</label>
+                <input type="number" id="adults" min="1" max="2" required><br>
+
+                <label for="children">Children:</label>
+                <input type="number" id="children" min="0" max="2" required><br>
+
+                <label for="infants">Infants:</label>
+                <input type="number" id="infants" min="0" required><br>
+
+                <button type="button" id="submitCruise">Submit</button>
+            </form>
+
+            <div id="output" class="display-info" style="margin-top: 1rem;"></div>
+        </div>
+    </div>
+    <div class="footer">
+        <p>&copy; 2024 Travel Deals. All rights reserved.</p>
+        <p>Team Information: Arvind Jei - AXD220199, Aditya Krishna - AXK230001, Anusha Gupta - AXG230026 CS 6314.002</p>
+
+        <label for="font-size">Font Size:</label>
+        <select id="font-size">
+            <option value="14px">Small</option>
+            <option value="16px" selected>Medium</option>
+            <option value="18px">Large</option>
+            <option value="20px">Extra Large</option>
+        </select>
+    
+        <label for="bg-color">Theme:</label>
+        <select id="bg-color">
+            <option value="#ffffff">Default Theme</option>
+            <option value="#d3e4ff">Blue Theme</option>
+            <option value="#d3ffd3">Green Theme</option>
+            <option value="#f4f4f4">Light Grey Theme</option>
+            <option value="#e0e0e0">Dark Grey Theme</option>
+        </select>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            // Validation and form submission using jQuery
+            $('#submitCruise').click(function() {
+                const destination = $('#destination').val();
+                const departureDate = new Date($('#departureDate').val());
+                const minDuration = parseInt($('#minDuration').val());
+                const maxDuration = parseInt($('#maxDuration').val());
+                const adults = parseInt($('#adults').val());
+                const children = parseInt($('#children').val());
+                const infants = parseInt($('#infants').val());
+
+                const validDestinations = ["Alaska", "Bahamas", "Europe", "Mexico"];
+                const minDate = new Date("2024-09-01");
+                const maxDate = new Date("2024-12-01");
+
+                let isValid = true;
+                let errorMessage = "";
+
+                // Destination validation
+                if (!validDestinations.includes(destination)) {
+                    isValid = false;
+                    errorMessage += "Destination must be Alaska, Bahamas, Europe, or Mexico.\n";
+                }
+
+                // Departure date validation
+                if (departureDate < minDate || departureDate > maxDate) {
+                    isValid = false;
+                    errorMessage += "Departure date must be between Sep 1, 2024, and Dec 1, 2024.\n";
+                }
+
+                // Duration validation
+                if (minDuration < 3 || maxDuration > 10 || minDuration > maxDuration) {
+                    isValid = false;
+                    errorMessage += "Cruise duration must be between 3 and 10 days, with minimum not exceeding maximum.\n";
+                }
+
+                // Guests validation
+                if ((adults + children) > 2 && infants === 0) {
+                    isValid = false;
+                    errorMessage += "A room can have at most 2 guests excluding infants.\n";
+                }
+
+                if (isValid) {
+                    const roomsNeeded = Math.ceil((adults + children) / 2);
+                    $('#output').html(`
+                        <h3>Cruise Details</h3>
+                        <table>
+                            <tr><th>Destination:</th><td>${destination}</td></tr>
+                            <tr><th>Departure Date:</th><td>${departureDate.toLocaleDateString()}</td></tr>
+                            <tr><th>Duration:</th><td>${minDuration} - ${maxDuration} days</td></tr>
+                            <tr><th>Adults:</th><td>${adults}</td></tr>
+                            <tr><th>Children:</th><td>${children}</td></tr>
+                            <tr><th>Infants:</th><td>${infants}</td></tr>
+                            <tr><th>Rooms Needed:</th><td>${roomsNeeded}</td></tr>
+                        </table>
+                    `);
+                } else {
+                    alert(errorMessage);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Deals - Flights</title>
+    <link rel="stylesheet" href="mystyle.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="header">
+        <h1>Flights</h1>
+        <p id="date-time"></p>
+    </div>
+    <div class="nav">
+        <a href="index.html">Home</a>
+        <a href="stays.html">Stays</a>
+        <a href="flights.html">Flights</a>
+        <a href="cars.html">Cars</a>
+        <a href="cruises.html">Cruises</a>
+        <a href="contact-us.html">Contact Us</a>
+        <a href="cart.html">Cart</a>
+    </div>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Flights</h2>
+            <p>Find the best flight deals for your trip.</p>
+        </div>
+        <div class="main-content">
+            <h2>Search for Flights</h2>
+            <form id="flightForm">
+                <label for="tripType">Trip Type:</label>
+                <select id="tripType" name="tripType" required>
+                    <option value="one-way">One Way</option>
+                    <option value="round-trip">Round Trip</option>
+                </select><br>
+
+                <label for="origin">Origin:</label>
+                <input type="text" id="origin" name="origin" placeholder="Enter origin" required><br>
+
+                <label for="destination">Destination:</label>
+                <input type="text" id="destination" name="destination" placeholder="Enter destination" required><br>
+
+                <label for="departureDate">Departure Date:</label>
+                <input type="date" id="departureDate" name="departureDate" required><br>
+
+                <div id="returnDateContainer" style="display: none;">
+                    <label for="returnDate">Return Date:</label>
+                    <input type="date" id="returnDate" name="returnDate"><br>
+                </div>
+
+                <label for="passengerIcon">Passengers:</label>
+                <span id="passengerIcon" style="cursor: pointer;">&#128100; (Click to enter details)</span>
+
+                <div id="passengerForm" style="display: none; margin-top: 1rem; background: #f9f9f9; padding: 1rem; border: 1px solid #ddd; border-radius: 8px;">
+                    <label for="adults">Adults:</label>
+                    <input type="number" id="adults" name="adults" min="1" value="1" required><br>
+
+                    <label for="children">Children:</label>
+                    <input type="number" id="children" name="children" min="0" value="0"><br>
+
+                    <label for="infants">Infants:</label>
+                    <input type="number" id="infants" name="infants" min="0" value="0"><br>
+
+                    <button type="button" id="closePassengerForm">Close</button>
+                </div>
+
+                <button type="submit">Search</button>
+                <p id="errorMessage" style="color: red;"></p>
+
+                <div id="displayInfo" class="display-info" style="display: none;">
+                    <h3>Flight Details</h3>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th>Trip Type</th>
+                                <td id="displayTripType"></td>
+                            </tr>
+                            <tr>
+                                <th>Origin</th>
+                                <td id="displayOrigin"></td>
+                            </tr>
+                            <tr>
+                                <th>Destination</th>
+                                <td id="displayDestination"></td>
+                            </tr>
+                            <tr>
+                                <th>Departure Date</th>
+                                <td id="displayDepartureDate"></td>
+                            </tr>
+                            <tr id="returnDateRow" style="display: none;">
+                                <th>Return Date</th>
+                                <td id="displayReturnDate"></td>
+                            </tr>
+                            <tr>
+                                <th>Passengers</th>
+                                <td id="displayPassengers"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Available Flights Table in flights.html -->
+                <div id="availableFlights" class="available-flights" style="display: none;">
+                    <h3>Available Flights</h3>
+                    <table id="flightsTable" class="flights-table">
+                        <thead>
+                            <tr>
+                                <th>Flight ID</th>
+                                <th>Departure</th>
+                                <th>Arrival</th>
+                                <th>Available Seats</th>
+                                <th>Price</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="flightsTableBody"></tbody>
+                    </table>
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <div class="footer">
+        <p>&copy; 2024 Travel Deals. All rights reserved.</p>
+        <p>Team Information: Arvind Jei - AXD220199, Aditya Krishna - AXK230001, Anusha Gupta - AXG230026 CS 6314.002</p>
+
+        <label for="font-size">Font Size:</label>
+        <select id="font-size">
+            <option value="14px">Small</option>
+            <option value="16px" selected>Medium</option>
+            <option value="18px">Large</option>
+            <option value="20px">Extra Large</option>
+        </select>
+
+        <label for="bg-color">Theme:</label>
+        <select id="bg-color">
+            <option value="#ffffff">Default Theme</option>
+            <option value="#d3e4ff">Blue Theme</option>
+            <option value="#d3ffd3">Green Theme</option>
+            <option value="#f4f4f4">Light Grey Theme</option>
+            <option value="#e0e0e0">Dark Grey Theme</option>
+        </select>
+    </div>
+</body>
+</html>
